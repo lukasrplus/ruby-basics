@@ -15,6 +15,56 @@
 # Example Output #3:
 # 2 A
 
+puts "Let's play Blackjack"
+puts "Here are your Cards."
+
+deck = ["2","2","2","2",
+        "3","3","3","3",
+        "4","4","4","4",
+        "5","5","5","5",
+        "6","6","6","6",
+        "7","7","7","7",
+        "8","8","8","8",
+        "9","9","9","9",
+        "10","10","10","10",
+        "J","J","J","J",
+        "Q","Q","Q","Q",
+        "K","K","K","K",
+        "A","A","A","A"]
+
+deck_values =
+
+# FIRST VERSION (without taking cards away)
+# card1 = deck.sample
+# card2 = deck.sample
+
+# draw1 = "#{card1} #{card2}"
+
+# puts draw1
+
+2.times do
+  rand_number = rand(deck.count)
+  print deck.slice!(rand_number) + " "
+end
+
+print deck
+
+puts "#{deck.count} Cards left in the Deck"
+
+
+
+
+
+
+
+# card1 = deck.slice!(rand(1..52))
+# card2 = deck.slice!(rand_number-1)
+
+# draw1 = "#{card1} #{card2}"
+
+# puts draw1
+
+# print deck
 
 
 
