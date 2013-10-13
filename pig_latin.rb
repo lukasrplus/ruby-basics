@@ -32,6 +32,10 @@
 
 # oodgay ucklay!
 
+
+
+# ***********DEFINE OWN METHOD****************
+
 def encode (word)
   if word.start_with?("a", "e", "i", "o", "u")
     print word + "ay "
@@ -43,13 +47,9 @@ def encode (word)
 end
 
 
-# puts "Give Me a Word"
+# *********************************************
 
 
-
-# word = gets.chomp
-
-# encode word
 
 puts "Give me a sentence:"
 
@@ -68,60 +68,7 @@ end
 
 
 
-# puts "I would love to create a code for you. Start typing"
-# to_be_encoded = gets.chomp
 
-
-# # ******* WORKING ENCODE *******************
-# if to_be_encoded.start_with?("a", "e", "i", "o", "u")
-#   puts to_be_encoded + "ay"
-# else
-#   laenge = to_be_encoded.length
-#   puts to_be_encoded[1..laenge] + to_be_encoded[0] + "ay"
-# end
-# # ********************************************
-
-
-
-
-
-
-
-# # = defines Array
-# words_to_be_encoded = to_be_encoded.split
-
-# number_of_words = words_to_be_encoded.count
-
-# number_of_words.times do
-#   encode
-
-
-
-
-
-
-
-
-
-
-
-# = defines Method
-# def encode (word)
-#   if word.start_with?("a", "e", "i", "o", "u")
-#     puts word + "ay"
-#   else
-#     laenge = word.length
-#     puts word[1..laenge] + word[0] + "ay"
-# end
-
-# # = defines empty array for output
-
-# encoded_sentence = [""]
-
-# do encoded_sentence << encode words_to_be_encoded.each
-# end
-
-# puts encoded_sentence
 
 
 
