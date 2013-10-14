@@ -16,7 +16,7 @@
 # 2 A
 
 puts "Let's play Blackjack"
-puts "Here are your Cards."
+
 
 deck = ["C2","D2","S2","H2",
         "C3","D3","S3","H3",
@@ -68,7 +68,7 @@ draw1 = []
 
 # ********Play out cards***************
 
-  3.times do
+  8.times do
   rand_number = rand(deck.count)
   draw1 << deck.slice!(rand_number) + " "
   end
@@ -77,6 +77,11 @@ draw1 = []
 card1 = draw1[0]
 card2 = draw1[1]
 card3 = draw1[2]
+card4 = draw1[3]
+card5 = draw1[4]
+card6 = draw1[5]
+card7 = draw1[6]
+card8 = draw1[7]
 
 
 
@@ -85,42 +90,93 @@ card3 = draw1[2]
 card1_reduced = card1.slice(1..2)
 card2_reduced = card2.slice(1..2)
 card3_reduced = card3.slice(1..2)
+card4_reduced = card4.slice(1..2)
+card5_reduced = card5.slice(1..2)
+card6_reduced = card6.slice(1..2)
+card7_reduced = card7.slice(1..2)
+card8_reduced = card8.slice(1..2)
 
 # ***************Calling the hash***********************
 card1_value = deck_values[card1_reduced]
 card2_value = deck_values[card2_reduced]
 card3_value = deck_values[card3_reduced]
+card4_value = deck_values[card4_reduced]
+card5_value = deck_values[card5_reduced]
+card6_value = deck_values[card6_reduced]
+card7_value = deck_values[card7_reduced]
+card8_value = deck_values[card8_reduced]
+
 
 # **********Adding up the draw*************************
 
 draw1_value = card1_value + card2_value
 draw2_value = draw1_value + card3_value
 
+# ********************Adding up the dealer's frist draw**************
 
-if draw1_value > 17
+dealer1_value = card4_value + card5_value
+dealer2_value = dealer1_value + card6_value
 
-   if draw1_value == 21
-      puts "BLACKJACK! You made a #{draw1_value}."
-    else
-      puts "#{card1} #{card2}"
-      puts "Your hand is a #{draw1_value}"
-   end
 
+puts "Here are your first cards"
+puts "#{card1} #{card2}"
+puts "Your hand is a #{draw1_value}"
+
+
+if dealer1_value == 21
+  puts "You are fucked. The Dealer made a BLACKJACK."
+  puts "#{card4} #{card5}"
+  puts "He made a #{dealer1_value}"
 else
-
-  if draw2_value == 21
-    puts "#{card1} #{card2} #{card3}"
-    puts "BLACKJACK! You made a #{draw2_value}."
-  elsif draw2_value > 21
-    puts "#{card1} #{card2} #{card3}"
-    puts "Your hand is a #{draw2_value}"
-    puts "You are BUSTED"
-  elsif draw2_value < 21
-    puts "#{card1} #{card2} #{card3}"
-    puts "Your hand is a #{draw2_value}"
-  end
-
+  puts "The Dealer's cards are:"
+  puts "#{card4} #{card5}"
+  puts "The dealer's hand is a #{dealer1_value}"
 end
+
+
+
+puts "Do you want to HIT or STAY?"
+user_response = gets.chomp
+
+if user_response.downcase == "stay"
+  puts "Alright"
+elsif user_response.downcase == "hit"
+  puts "Wait a sec. I will give you another card."
+  puts "Here is your new card #{card7}"
+end
+
+
+
+
+
+
+
+
+
+# if draw1_value > 17
+
+#    if draw1_value == 21
+#       puts "BLACKJACK! You made a #{draw1_value}."
+#     else
+#       puts "#{card1} #{card2}"
+#       puts "Your hand is a #{draw1_value}"
+#    end
+
+# else
+
+#   if draw2_value == 21
+#     puts "#{card1} #{card2} #{card3}"
+#     puts "BLACKJACK! You made a #{draw2_value}."
+#   elsif draw2_value > 21
+#     puts "#{card1} #{card2} #{card3}"
+#     puts "Your hand is a #{draw2_value}"
+#     puts "You are BUSTED"
+#   elsif draw2_value < 21
+#     puts "#{card1} #{card2} #{card3}"
+#     puts "Your hand is a #{draw2_value}"
+#   end
+
+# end
 
 
  # **********Checking the Deck*************************
